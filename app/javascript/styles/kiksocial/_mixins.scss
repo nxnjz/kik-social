@@ -1,0 +1,93 @@
+// NEW kik SPECIFIC MIXINS
+
+// THEME MIXINS
+
+// standard container drop shadow
+@mixin light-theme-shadow() {box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);}
+
+// common properties for all standard containers
+@mixin kik-container-standards() {
+	border-radius: 10px;
+	background: $kik-background-container;
+	body.theme-kiksocial-light & {
+		@include light-theme-shadow();
+		background: $kik-background-container-light;
+	}
+}
+
+// SHORTCUTS
+@mixin input-placeholder($color) {
+	&::-webkit-input-placeholder {color: $color;}
+	&::-moz-placeholder {color: $color;}
+	&:-ms-input-placeholder {color: $color;}
+	&:-moz-placeholder {color: $color;}
+}
+
+// OLDER MIXINS
+@mixin avatar-radius() {
+  border-radius: 50%;
+  background: transparent no-repeat;
+  background-position: 50%;
+  background-clip: padding-box;
+}
+
+@mixin avatar-size($size:48px) {
+	width: $size;
+	height: $size;
+	background-size: $size $size;
+}
+
+@mixin search-input() {
+	outline: 0;
+	box-sizing: border-box;
+	width: 100%;
+	border: 1px $kik-placeholder-accent solid;
+	box-shadow: none;
+	font-family: inherit;
+	background: $kik-background-container;
+	color: $kik-text-highlight;
+	@include font-size(16);
+	@include line-height(19);
+	margin: 0;
+	border-radius: 4px;
+
+	// Chrome does not like these concatinated together
+	&::placeholder {color: $kik-placeholder-accent;}
+	&:-ms-input-placeholder {color: $kik-placeholder-accent;}
+	&::-ms-input-placeholder{color: $kik-placeholder-accent;}
+
+	&::-moz-focus-inner {
+		border: 0;
+	}
+	&::-moz-focus-inner,
+	&:focus,
+	&:active {
+		outline: 0 !important;
+	}
+}
+
+@mixin search-popout() {
+	background: $kik-background-container;
+	border-radius: 4px;
+	border: 1px solid $kik-placeholder-accent;
+	padding: 8px 10px 17px 10px;
+	margin: 4px 0 0 0;
+	@include font-size(12);
+	@include line-height(14);
+	@include font-weight(normal);
+	color: $kik-secondary-text;
+	box-shadow: 0 0 6px 0 rgba(0,0,0,0.5);
+	h4 {
+		color: #fff;
+		@include font-size(14);
+		@include line-height(16);
+		@include font-weight(bold);
+	}
+	ul {
+		margin: 6px 0 6px;
+		li {
+			margin: 0 0 2px 0;
+			em {color: $kik-text-highlight;}
+		}
+	}
+}

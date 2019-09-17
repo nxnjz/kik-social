@@ -1,0 +1,23 @@
+input[type='text'],
+textarea {
+	&.standard {
+		box-sizing: border-box;
+		padding: 7px 10px;
+		border: 1px solid;
+		border-radius: 4px;
+		@include font-size(16);
+		@include line-height(18);
+		color: $kik-brand-default;
+		border-color: $kik-placeholder-accent;
+		background: $kik-background-container;
+		@include input-placeholder($kik-placeholder-accent);
+		body.theme-kiksocial-light & {
+			color: $kik-placeholder-accent;
+			border-color: $kik-secondary-text;
+			background: $kik-background-base-light;	
+			@include input-placeholder($kik-secondary-text);
+		}
+		&:focus {outline: none;}
+	}
+}
+textarea.standard {resize: vertical;}

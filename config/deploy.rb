@@ -2,7 +2,7 @@
 
 lock '3.11.0'
 
-set :repo_url, ENV.fetch('REPO', 'https://code.kik.com/kik/social/kik-social')
+set :repo_url, ENV.fetch('REPO', 'https://github.com/datgb/kik-social')
 set :branch, ENV.fetch('BRANCH', 'master')
 
 set :application, 'kiksocial'

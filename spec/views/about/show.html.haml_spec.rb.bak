@@ -17,7 +17,7 @@ describe 'about/show.html.haml', without_verify_partial_doubles: true do
       site_short_description: 'something',
       site_description: 'something',
       version_number: '1.0',
-      source_url: 'https://code.kik.com/kik/social/kik-social',
+      source_url: 'https://github.com/datgb/kik-social',
       open_registrations: false,
       thumbnail: nil,
       hero: nil,

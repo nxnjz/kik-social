@@ -4,7 +4,7 @@ kik Social by kik.com is available on our self-hosted GitLab.
 
 ## General Statements
 
-The [kik Social](https://code.kik.com/kik/social/kik-social) fork is not endorsed by the Mastodon team. kik is not receiving support from the Mastodon team and has not requested it. There has been no communication between the Mastodon and kik teams regarding the kik Social fork.
+The [kik Social](https://github.com/datgb/kik-social) fork is not endorsed by the Mastodon team. kik is not receiving support from the Mastodon team and has not requested it. There has been no communication between the Mastodon and kik teams regarding the kik Social fork.
 
 ## Acknowledgement of accomplishments
 

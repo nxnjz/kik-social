@@ -1,8 +1,8 @@
 {
   "name": "kik Social",
   "description": "A GNU Social-compatible microblogging server",
-  "repository": "https://code.kik.com/kik/social/kik-social",
-  "logo": "https://code.kik.com/kik/social/kik-social/blob/master/public/android-chrome-192x192.png",
+  "repository": "https://github.com/datgb/kik-social",
+  "logo": "https://github.com/datgb/kik-social/blob/master/public/android-chrome-192x192.png",
   "env": {
     "LOCAL_DOMAIN": {
       "description": "The domain that your kik Social instance will run on (this can be appname.scalingo.io or a custom domain)",

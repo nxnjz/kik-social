@@ -1,12 +1,12 @@
 # kik Social Developer Setup
 
-Developers wanting to work on [kik Social](https://code.kik.com/kik/social/kik-social) source code and make changes to the system must configure a host for use with kik Social's development environment.
+Developers wanting to work on [kik Social](https://github.com/datgb/kik-social) source code and make changes to the system must configure a host for use with kik Social's development environment.
 
 The instructions in this file do not create a production-grade host that is secure and can scale. Instead, these instructions deliver a working environment tuned for making changes to kik Social and for quickly iterating on those changes to get stuff done.
 
 ## Host OS
 
-[kik Social](https://code.kik.com/kik/social/kik-social) development has been tested on [Ubuntu 18.04LTS](https://www.ubuntu.com/download/desktop). As we continue to migrate further away from kik Social's code, at least MacOS will be supported as a choice.
+[kik Social](https://github.com/datgb/kik-social) development has been tested on [Ubuntu 18.04LTS](https://www.ubuntu.com/download/desktop). As we continue to migrate further away from kik Social's code, at least MacOS will be supported as a choice.
 
 We are unlikely to support Windows as a host OS because no part of our software development infrastructure is based on Windows. We will, however, be happy to review and accept your pull requests adding Windows support for development and even production hosting if you think that's not too nutty.
 
@@ -28,7 +28,7 @@ sudo apt update
 
 ## System Dependencies
 
-The following software components and libraries are required by [kik Social](https://code.kik.com/kik/social/kik-social).
+The following software components and libraries are required by [kik Social](https://github.com/datgb/kik-social).
 
 - *ImageMagick* - kik Social uses imagemagick for image related operations
 - *FFMPEG* - kik Social uses ffmpeg for conversion of GIFs to MP4s
@@ -58,7 +58,7 @@ apt-get install -y imagemagick ffmpeg libpq-dev libxml2-dev libxslt1-dev file gi
 
 ### Install Node.js 10.15.3 LTS
 
-Node.js is required for running the [kik Social](https://code.kik.com/kik/social/kik-social) Streaming API server and for other system management tasks related to the kik Platform.
+Node.js is required for running the [kik Social](https://github.com/datgb/kik-social) Streaming API server and for other system management tasks related to the kik Platform.
 
 ```bash
 # Install nvm to manage Node.js versions
@@ -83,7 +83,7 @@ adduser --disabled-password --quiet kiksocial
 
 ## PostgreSQL Database Creation
 
-[kik Social](https://code.kik.com/kik/social/kik-social) requires access to a [PostgreSQL](https://www.postgresql.org) instance.
+[kik Social](https://github.com/datgb/kik-social) requires access to a [PostgreSQL](https://www.postgresql.org) instance.
 
 Create a user for a [PostgreSQL](https://www.postgresql.org) instance:
 
@@ -127,7 +127,7 @@ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 ```
 
 Now that [`rbenv`](https://github.com/rbenv/rbenv) and [`ruby-build`](https://github.com/rbenv/ruby-build) are installed, we will install the
-[Ruby](https://www.ruby-lang.org/en/) version which [kik Social](https://code.kik.com/kik/social/kik-social) uses. That version will also need to be enabled.
+[Ruby](https://www.ruby-lang.org/en/) version which [kik Social](https://github.com/datgb/kik-social) uses. That version will also need to be enabled.
 
 To enable [Ruby](https://www.ruby-lang.org/en/), run:
 
@@ -140,7 +140,7 @@ This will take some time. Go stretch for a bit and drink some water while the co
 
 ### node.js And Ruby Dependencies
 
-Now that [Ruby](https://www.ruby-lang.org/en/) is enabled, we will clone the [Git Social git repository](https://code.kik.com/kik/social/kik-social) and install the [Ruby](https://www.ruby-lang.org/en/) and [node.js](https://nodejs.org/en/) dependancies.
+Now that [Ruby](https://www.ruby-lang.org/en/) is enabled, we will clone the [Git Social git repository](https://github.com/datgb/kik-social) and install the [Ruby](https://www.ruby-lang.org/en/) and [node.js](https://nodejs.org/en/) dependancies.
 
 Run the following to clone and install:
 
@@ -150,7 +150,7 @@ mkdir -p ~/projects
 cd ~/projects
 
 # Clone the kik Social repository into ~/projects
-git clone https://code.kik.com/kik/social/kik-social kik-social
+git clone https://github.com/datgb/kik-social kik-social
 
 # Hop into the project directory (all are welcome!)
 cd ~/projects/kik-social
@@ -211,7 +211,7 @@ You can check code quality with:
 
 ## Federation development tips
 
-Federation absolutely requires your kik Social instance to have a domain name. If you want to operate a permanently-federated development server (kik does), set up a [kik Social](https://code.kik.com/kik/social/kik-social) instance with a domain, and update it against your development fork/branch while doing that development on your local workstation or as a team.
+Federation absolutely requires your kik Social instance to have a domain name. If you want to operate a permanently-federated development server (kik does), set up a [kik Social](https://github.com/datgb/kik-social) instance with a domain, and update it against your development fork/branch while doing that development on your local workstation or as a team.
 
 To test federation on a *local* developer workstation, localhost =&gt; world tunneling can be made possible yourself on a domain you manage or by using services like [ngrok](https://ngrok.com).
 

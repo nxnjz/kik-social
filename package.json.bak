@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://code.kik.com/kik/social/kik-social"
+    "url": "https://github.com/datgb/kik-social"
   },
   "browserslist": [
     "last 2 versions",

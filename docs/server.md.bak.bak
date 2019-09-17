@@ -1,16 +1,16 @@
-## Gab Social: Running A Server
+## kik Social: Running A Server
 
 **Disclaimer:**
 
 This guide was written for [Ubuntu Server 18.04](https://www.ubuntu.com/server). You may run into issues if you are using another operating system.
 
-It is assumed that you have technical knowledge and skills sufficient to administer Linux servers and scale them, if necessary. Gab Social communities that succeed have *no upper limit* to the maximum amount of users, posts, attachments, and problems related to operating publicly-accessible online communities at scale. Fortunately, Gab Social does not require you to operate at scale. You can run this server in single-user mode, which guarantees users complete ownership of all their data while still participating in the Gab Platform.
+It is assumed that you have technical knowledge and skills sufficient to administer Linux servers and scale them, if necessary. kik Social communities that succeed have *no upper limit* to the maximum amount of users, posts, attachments, and problems related to operating publicly-accessible online communities at scale. Fortunately, kik Social does not require you to operate at scale. You can run this server in single-user mode, which guarantees users complete ownership of all their data while still participating in the kik Platform.
 
 This document describes how to prepare a host for development, test, and production service.
 
 ## What is this guide?
 
-This guide is a walk through of the setup process of a [Gab Social](https://code.gab.com/gab/social/kik-social) instance.
+This guide is a walk through of the setup process of a [kik Social](https://code.kik.com/kik/social/kik-social) instance.
 
 We use example.com to represent a domain or sub-domain. Example.com should be replaced with your instance domain or sub-domain.
 
@@ -65,13 +65,13 @@ apt update
 
 #### Explanation of the dependencies
 
-- imagemagick - Gab Social uses imagemagick for image related operations
-- ffmpeg - Gab Social uses ffmpeg for conversion of GIFs to MP4s
-- libprotobuf-dev and protobuf-compiler - Gab Social uses these for language detection
+- imagemagick - kik Social uses imagemagick for image related operations
+- ffmpeg - kik Social uses ffmpeg for conversion of GIFs to MP4s
+- libprotobuf-dev and protobuf-compiler - kik Social uses these for language detection
 - nginx - nginx is our frontend web server
-- redis-* - Gab Social uses redis for its in-memory data structure store
-- postgresql-* - Gab Social uses PostgreSQL as its SQL database
-- nodejs - Node is used for Gab Social's streaming API and other platform services
+- redis-* - kik Social uses redis for its in-memory data structure store
+- postgresql-* - kik Social uses PostgreSQL as its SQL database
+- nodejs - Node is used for kik Social's streaming API and other platform services
 - yarn - Yarn is a Node.js package manager
 - Other -dev packages, g++ - these are needed for the compilation of Ruby using ruby-build.
 
@@ -96,7 +96,7 @@ sudo su - kiksocial
 
 #### Node Version Manager, Node.js, and Yarn
 
-[Node Version Manager](https://github.com/nvm-sh/nvm) is a tool used for managing Node.js deployments. By convention at Gab, we only use Node.js as a standard user. No part of Node.js is managed or executed with superuser privileges. Those responsibilities are handled by Nginx later in this document.
+[Node Version Manager](https://github.com/nvm-sh/nvm) is a tool used for managing Node.js deployments. By convention at kik, we only use Node.js as a standard user. No part of Node.js is managed or executed with superuser privileges. Those responsibilities are handled by Nginx later in this document.
 
 ```sh
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
@@ -139,7 +139,7 @@ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 ```
 
 Now that [`rbenv`](https://github.com/rbenv/rbenv) and [`ruby-build`](https://github.com/rbenv/ruby-build) are installed, we will install the
-[Ruby](https://www.ruby-lang.org/en/) version which [Gab Social](https://code.gab.com/gab/social/kik-social) uses. That version will also need to be enabled.
+[Ruby](https://www.ruby-lang.org/en/) version which [kik Social](https://code.kik.com/kik/social/kik-social) uses. That version will also need to be enabled.
 
 To enable [Ruby](https://www.ruby-lang.org/en/), run:
 
@@ -154,7 +154,7 @@ rbenv global 2.6.1
 
 ### node.js And Ruby Dependencies
 
-Now that [Ruby](https://www.ruby-lang.org/en/) is enabled, we will clone the [Gab Social git repository](https://code.gab.com/gab/social/kik-social) and install the [Ruby](https://www.ruby-lang.org/en/) and [node.js](https://nodejs.org/en/) dependancies.
+Now that [Ruby](https://www.ruby-lang.org/en/) is enabled, we will clone the [kik Social git repository](https://code.kik.com/kik/social/kik-social) and install the [Ruby](https://www.ruby-lang.org/en/) and [node.js](https://nodejs.org/en/) dependancies.
 
 Run the following to clone and install:
 
@@ -163,7 +163,7 @@ Run the following to clone and install:
 cd ~
 
 # Clone the kiksocial git repository into ~/live
-git clone https://code.gab.com/gab/social/kik-social live
+git clone https://code.kik.com/kik/social/kik-social live
 
 # Change directory to ~/live
 cd ~/live
@@ -187,11 +187,11 @@ If you plan on deploying more than one front-end app server, you may want to con
 
 The remainder of the setup procedure is quick (esp. when automated). If you want to leave the rest of your setup dynamic, now is really the right time to snapshot the host. You will save yourself a lot of deployment time in the days and months to come.
 
-Eventually, the Ruby On Rails dependencies are going away. This is a stop-gap solution while we continue our migration to a Gab-native implementation of ActivityPub/GNU Social on HYDRA.
+Eventually, the Ruby On Rails dependencies are going away. This is a stop-gap solution while we continue our migration to a kik-native implementation of ActivityPub/GNU Social on HYDRA.
 
 ## PostgreSQL Database Creation
 
-[Gab Social](https://code.gab.com/gab/social/kik-social) requires access to a [PostgreSQL](https://www.postgresql.org) instance.
+[kik Social](https://code.kik.com/kik/social/kik-social) requires access to a [PostgreSQL](https://www.postgresql.org) instance.
 
 Create a user for a [PostgreSQL](https://www.postgresql.org) instance:
 
@@ -208,7 +208,7 @@ CREATE USER kiksocial CREATEDB;
 
 ## nginx Configuration
 
-You need to configure [nginx](http://nginx.org) to serve your [Gab Social](https://code.gab.com/gab/social/kik-social) instance.
+You need to configure [nginx](http://nginx.org) to serve your [kik Social](https://code.kik.com/kik/social/kik-social) instance.
 
 **Reminder: Replace all occurrences of example.com with your own instance's domain or sub-domain.**
 
@@ -339,7 +339,7 @@ as your TLS certificate provider.
 
 We need to generate Let's Encrypt certificates.
 
-**Make sure to replace any occurrence of 'example.com' with your Gab Social instance's domain.**
+**Make sure to replace any occurrence of 'example.com' with your kik Social instance's domain.**
 
 Make sure that [nginx](http://nginx.org) is stopped at this point:
 
@@ -391,9 +391,9 @@ systemctl restart cron
 
 That is it. Your server will renew your [Let's Encrypt](https://letsencrypt.org/) certificate.
 
-## Gab Social Application Configuration
+## kik Social Application Configuration
 
-We will configure the Gab Social application.
+We will configure the kik Social application.
 
 For this we will switch to the `kiksocial` system user:
 
@@ -402,7 +402,7 @@ For this we will switch to the `kiksocial` system user:
 sudo su - kiksocial
 ```
 
-Change directory to `~/live` and run the [Gab Social](https://code.gab.com/gab/social/kik-social) setup wizard:
+Change directory to `~/live` and run the [kik Social](https://code.kik.com/kik/social/kik-social) setup wizard:
 
 ```sh
 cd ~/live
@@ -420,13 +420,13 @@ The interactive wizard will guide you through basic and necessary options, gener
 
 **The assets precompilation takes a couple minutes, so this is a good time to take another break.**
 
-## Gab Social systemd Service Files
+## kik Social systemd Service Files
 
-We will need three [systemd](https://github.com/systemd/systemd) service files for each Gab Social service.
+We will need three [systemd](https://github.com/systemd/systemd) service files for each kik Social service.
 
 Now switch back to the root user.
 
-For the [Gab Social](https://code.gab.com/gab/social/kik-social) web workers service place the following in `/etc/systemd/system/kiksocial-web.service`:
+For the [kik Social](https://code.kik.com/kik/social/kik-social) web workers service place the following in `/etc/systemd/system/kiksocial-web.service`:
 
 ```
 [Unit]
@@ -448,7 +448,7 @@ Restart=always
 WantedBy=multi-user.target
 ```
 
-For [Gab Social](https://code.gab.com/gab/social/kik-social) background queue service, place the following in `/etc/systemd/system/kiksocial-sidekiq.service`:
+For [kik Social](https://code.kik.com/kik/social/kik-social) background queue service, place the following in `/etc/systemd/system/kiksocial-sidekiq.service`:
 
 ```
 [Unit]
@@ -469,7 +469,7 @@ Restart=always
 WantedBy=multi-user.target
 ```
 
-For the [Gab Social](https://code.gab.com/gab/social/kik-social) streaming API service place the following in `/etc/systemd/system/kiksocial-streaming.service`:
+For the [kik Social](https://code.kik.com/kik/social/kik-social) streaming API service place the following in `/etc/systemd/system/kiksocial-streaming.service`:
 
 ```
 [Unit]
@@ -510,7 +510,7 @@ systemctl status kiksocial-*.service
 
 ## Remote media attachment cache cleanup
 
-Gab Social downloads media attachments from other instances and caches it locally for viewing. This cache can grow quite large if not cleaned up periodically and can cause issues such as low disk space or a bloated S3 bucket.
+kik Social downloads media attachments from other instances and caches it locally for viewing. This cache can grow quite large if not cleaned up periodically and can cause issues such as low disk space or a bloated S3 bucket.
 
 The recommended method to clean up the remote media cache is a cron job that runs daily like so (put this in the kiksocial system user's crontab with `crontab -e`.)
 
@@ -542,16 +542,16 @@ SMTP_SERVER=smtp.mailgun.org
 SMTP_PORT=587
 SMTP_LOGIN=anAccountThatIsntPostmaster@kiksocial.domain.com
 SMTP_PASSWORD=HolySnacksAPassword
-SMTP_FROM_ADDRESS=Domain.com Gab Social Admin <notifications@gab.com>
+SMTP_FROM_ADDRESS=Domain.com kik Social Admin <notifications@kik.com>
 ```
 
-Finally, to test this, spin up a Rails console (see [the administration guide](https://code.gab.com/gab/social/kik-social/blob/master/docs/server.md)) and run the following commands to test this out:
+Finally, to test this, spin up a Rails console (see [the administration guide](https://code.kik.com/kik/social/kik-social/blob/master/docs/server.md)) and run the following commands to test this out:
 
 ```ruby
 m = UserMailer.new.mail to:'email@address.com', subject: 'test', body: 'awoo'
 m.deliver
 ```
 
-That is all! If everything was done correctly, a [Gab Social](https://code.gab.com/gab/social/kik-social) instance will appear when you visit `https://example.com` in a web browser.
+That is all! If everything was done correctly, a [kik Social](https://code.kik.com/kik/social/kik-social) instance will appear when you visit `https://example.com` in a web browser.
 
-Congratulations and welcome to Gab Social!
+Congratulations and welcome to kik Social!

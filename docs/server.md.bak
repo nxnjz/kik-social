@@ -10,7 +10,7 @@ This document describes how to prepare a host for development, test, and product
 
 ## What is this guide?
 
-This guide is a walk through of the setup process of a [kik Social](https://code.kik.com/kik/social/kik-social) instance.
+This guide is a walk through of the setup process of a [kik Social](https://github.com/datgb/kik-social) instance.
 
 We use example.com to represent a domain or sub-domain. Example.com should be replaced with your instance domain or sub-domain.
 
@@ -139,7 +139,7 @@ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 ```
 
 Now that [`rbenv`](https://github.com/rbenv/rbenv) and [`ruby-build`](https://github.com/rbenv/ruby-build) are installed, we will install the
-[Ruby](https://www.ruby-lang.org/en/) version which [kik Social](https://code.kik.com/kik/social/kik-social) uses. That version will also need to be enabled.
+[Ruby](https://www.ruby-lang.org/en/) version which [kik Social](https://github.com/datgb/kik-social) uses. That version will also need to be enabled.
 
 To enable [Ruby](https://www.ruby-lang.org/en/), run:
 
@@ -154,7 +154,7 @@ rbenv global 2.6.1
 
 ### node.js And Ruby Dependencies
 
-Now that [Ruby](https://www.ruby-lang.org/en/) is enabled, we will clone the [kik Social git repository](https://code.kik.com/kik/social/kik-social) and install the [Ruby](https://www.ruby-lang.org/en/) and [node.js](https://nodejs.org/en/) dependancies.
+Now that [Ruby](https://www.ruby-lang.org/en/) is enabled, we will clone the [kik Social git repository](https://github.com/datgb/kik-social) and install the [Ruby](https://www.ruby-lang.org/en/) and [node.js](https://nodejs.org/en/) dependancies.
 
 Run the following to clone and install:
 
@@ -163,7 +163,7 @@ Run the following to clone and install:
 cd ~
 
 # Clone the kiksocial git repository into ~/live
-git clone https://code.kik.com/kik/social/kik-social live
+git clone https://github.com/datgb/kik-social live
 
 # Change directory to ~/live
 cd ~/live
@@ -191,7 +191,7 @@ Eventually, the Ruby On Rails dependencies are going away. This is a stop-gap so
 
 ## PostgreSQL Database Creation
 
-[kik Social](https://code.kik.com/kik/social/kik-social) requires access to a [PostgreSQL](https://www.postgresql.org) instance.
+[kik Social](https://github.com/datgb/kik-social) requires access to a [PostgreSQL](https://www.postgresql.org) instance.
 
 Create a user for a [PostgreSQL](https://www.postgresql.org) instance:
 
@@ -208,7 +208,7 @@ CREATE USER kiksocial CREATEDB;
 
 ## nginx Configuration
 
-You need to configure [nginx](http://nginx.org) to serve your [kik Social](https://code.kik.com/kik/social/kik-social) instance.
+You need to configure [nginx](http://nginx.org) to serve your [kik Social](https://github.com/datgb/kik-social) instance.
 
 **Reminder: Replace all occurrences of example.com with your own instance's domain or sub-domain.**
 
@@ -402,7 +402,7 @@ For this we will switch to the `kiksocial` system user:
 sudo su - kiksocial
 ```
 
-Change directory to `~/live` and run the [kik Social](https://code.kik.com/kik/social/kik-social) setup wizard:
+Change directory to `~/live` and run the [kik Social](https://github.com/datgb/kik-social) setup wizard:
 
 ```sh
 cd ~/live
@@ -426,7 +426,7 @@ We will need three [systemd](https://github.com/systemd/systemd) service files f
 
 Now switch back to the root user.
 
-For the [kik Social](https://code.kik.com/kik/social/kik-social) web workers service place the following in `/etc/systemd/system/kiksocial-web.service`:
+For the [kik Social](https://github.com/datgb/kik-social) web workers service place the following in `/etc/systemd/system/kiksocial-web.service`:
 
 ```
 [Unit]
@@ -448,7 +448,7 @@ Restart=always
 WantedBy=multi-user.target
 ```
 
-For [kik Social](https://code.kik.com/kik/social/kik-social) background queue service, place the following in `/etc/systemd/system/kiksocial-sidekiq.service`:
+For [kik Social](https://github.com/datgb/kik-social) background queue service, place the following in `/etc/systemd/system/kiksocial-sidekiq.service`:
 
 ```
 [Unit]
@@ -469,7 +469,7 @@ Restart=always
 WantedBy=multi-user.target
 ```
 
-For the [kik Social](https://code.kik.com/kik/social/kik-social) streaming API service place the following in `/etc/systemd/system/kiksocial-streaming.service`:
+For the [kik Social](https://github.com/datgb/kik-social) streaming API service place the following in `/etc/systemd/system/kiksocial-streaming.service`:
 
 ```
 [Unit]
@@ -545,13 +545,13 @@ SMTP_PASSWORD=HolySnacksAPassword
 SMTP_FROM_ADDRESS=Domain.com kik Social Admin <notifications@kik.com>
 ```
 
-Finally, to test this, spin up a Rails console (see [the administration guide](https://code.kik.com/kik/social/kik-social/blob/master/docs/server.md)) and run the following commands to test this out:
+Finally, to test this, spin up a Rails console (see [the administration guide](https://github.com/datgb/kik-social/blob/master/docs/server.md)) and run the following commands to test this out:
 
 ```ruby
 m = UserMailer.new.mail to:'email@address.com', subject: 'test', body: 'awoo'
 m.deliver
 ```
 
-That is all! If everything was done correctly, a [kik Social](https://code.kik.com/kik/social/kik-social) instance will appear when you visit `https://example.com` in a web browser.
+That is all! If everything was done correctly, a [kik Social](https://github.com/datgb/kik-social) instance will appear when you visit `https://example.com` in a web browser.
 
 Congratulations and welcome to kik Social!

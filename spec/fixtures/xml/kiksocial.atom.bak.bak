@@ -24,19 +24,19 @@
     <id>tag:kickass.zone,2016-10-10:objectId=7:objectType=Follow</id>
     <published>2016-10-10T13:29:56Z</published>
     <updated>2016-10-10T13:29:56Z</updated>
-    <title>localhost started following kat@gab.com</title>
-    <content type="html">localhost started following kat@gab.com</content>
+    <title>localhost started following kat@kik.com</title>
+    <content type="html">localhost started following kat@kik.com</content>
     <activity:verb>http://activitystrea.ms/schema/1.0/follow</activity:verb>
     <link rel="self" type="application/atom+xml" href="http://kickass.zone/users/localhost/updates/12.atom"/>
     <link rel="alternate" type="text/html" href="http://kickass.zone/users/localhost/updates/12"/>
     <activity:object-type>http://activitystrea.ms/schema/1.0/activity</activity:object-type>
     <activity:object>
       <activity:object-type>http://activitystrea.ms/schema/1.0/person</activity:object-type>
-      <uri>https://gab.com/users/kat</uri>
+      <uri>https://kik.com/users/kat</uri>
       <name>kat</name>
-      <email>kat@gab.com</email>
+      <email>kat@kik.com</email>
       <summary>#trans #queer</summary>
-      <link rel="alternate" type="text/html" href="https://gab.com/users/kat"/>
+      <link rel="alternate" type="text/html" href="https://kik.com/users/kat"/>
       <link rel="avatar" type="image/jpeg" media:width="300" media:height="300" href="http://kickass.zone/system/accounts/avatars/000/000/016/large/kat-20150403T124737-b2mbt44.jpg"/>
       <link rel="avatar" type="image/jpeg" media:width="96" media:height="96" href="http://kickass.zone/system/accounts/avatars/000/000/016/medium/kat-20150403T124737-b2mbt44.jpg"/>
       <link rel="avatar" type="image/jpeg" media:width="48" media:height="48" href="http://kickass.zone/system/accounts/avatars/000/000/016/small/kat-20150403T124737-b2mbt44.jpg"/>
@@ -49,29 +49,29 @@
     <id>tag:kickass.zone,2016-10-10:objectId=3:objectType=Favourite</id>
     <published>2016-10-10T13:29:26Z</published>
     <updated>2016-10-10T13:29:26Z</updated>
-    <title>localhost favourited a status by kat@gab.com</title>
-    <content type="html">localhost favourited a status by kat@gab.com</content>
+    <title>localhost favourited a status by kat@kik.com</title>
+    <content type="html">localhost favourited a status by kat@kik.com</content>
     <activity:verb>http://activitystrea.ms/schema/1.0/favorite</activity:verb>
     <link rel="self" type="application/atom+xml" href="http://kickass.zone/users/localhost/updates/11.atom"/>
     <link rel="alternate" type="text/html" href="http://kickass.zone/users/localhost/updates/11"/>
     <activity:object-type>http://activitystrea.ms/schema/1.0/activity</activity:object-type>
-    <thr:in-reply-to ref="tag:gab.com,2016-10-10:objectId=22833:objectType=Status" href="https://gab.com/users/kat/updates/16543" type="text/html"/>
+    <thr:in-reply-to ref="tag:kik.com,2016-10-10:objectId=22833:objectType=Status" href="https://kik.com/users/kat/updates/16543" type="text/html"/>
     <activity:object>
       <activity:object-type>http://activitystrea.ms/schema/1.0/comment</activity:object-type>
-      <id>tag:gab.com,2016-10-10:objectId=22833:objectType=Status</id>
+      <id>tag:kik.com,2016-10-10:objectId=22833:objectType=Status</id>
       <title>@localhost  oooh more stuffs 	&#x2764;</title>
-      <link rel="alternate" type="text/html" href="https://gab.com/users/kat/updates/16543"/>
+      <link rel="alternate" type="text/html" href="https://kik.com/users/kat/updates/16543"/>
       <content type="html">&lt;p&gt;&lt;a href="http://kickass.zone/users/localhost"&gt;@localhost&lt;/a&gt;  oooh more stuffs 	&#x2764;&lt;/p&gt;</content>
       <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
       <published>2016-10-10T13:23:35Z</published>
       <updated>2016-10-10T13:23:35Z</updated>
       <author>
         <activity:object-type>http://activitystrea.ms/schema/1.0/person</activity:object-type>
-        <uri>https://gab.com/users/kat</uri>
+        <uri>https://kik.com/users/kat</uri>
         <name>kat</name>
-        <email>kat@gab.com</email>
+        <email>kat@kik.com</email>
         <summary>#trans #queer</summary>
-        <link rel="alternate" type="text/html" href="https://gab.com/users/kat"/>
+        <link rel="alternate" type="text/html" href="https://kik.com/users/kat"/>
         <link rel="avatar" type="image/jpeg" media:width="300" media:height="300" href="http://kickass.zone/system/accounts/avatars/000/000/016/large/kat-20150403T124737-b2mbt44.jpg"/>
         <link rel="avatar" type="image/jpeg" media:width="96" media:height="96" href="http://kickass.zone/system/accounts/avatars/000/000/016/medium/kat-20150403T124737-b2mbt44.jpg"/>
         <link rel="avatar" type="image/jpeg" media:width="48" media:height="48" href="http://kickass.zone/system/accounts/avatars/000/000/016/small/kat-20150403T124737-b2mbt44.jpg"/>
@@ -86,35 +86,35 @@
     <id>tag:kickass.zone,2016-10-10:objectId=2:objectType=Favourite</id>
     <published>2016-10-10T13:13:15Z</published>
     <updated>2016-10-10T13:13:15Z</updated>
-    <title>localhost favourited a status by robcolbert@gab.com</title>
-    <content type="html">localhost favourited a status by robcolbert@gab.com</content>
+    <title>localhost favourited a status by robcolbert@kik.com</title>
+    <content type="html">localhost favourited a status by robcolbert@kik.com</content>
     <activity:verb>http://activitystrea.ms/schema/1.0/favorite</activity:verb>
     <link rel="self" type="application/atom+xml" href="http://kickass.zone/users/localhost/updates/10.atom"/>
     <link rel="alternate" type="text/html" href="http://kickass.zone/users/localhost/updates/10"/>
     <activity:object-type>http://activitystrea.ms/schema/1.0/activity</activity:object-type>
-    <thr:in-reply-to ref="tag:gab.com,2016-10-10:objectId=22825:objectType=Status" href="https://gab.com/users/robcolbert/updates/16538" type="text/html"/>
+    <thr:in-reply-to ref="tag:kik.com,2016-10-10:objectId=22825:objectType=Status" href="https://kik.com/users/robcolbert/updates/16538" type="text/html"/>
     <activity:object>
       <activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
-      <id>tag:gab.com,2016-10-10:objectId=22825:objectType=Status</id>
+      <id>tag:kik.com,2016-10-10:objectId=22825:objectType=Status</id>
       <title>Deployed some fixes</title>
-      <link rel="alternate" type="text/html" href="https://gab.com/users/robcolbert/updates/16538"/>
+      <link rel="alternate" type="text/html" href="https://kik.com/users/robcolbert/updates/16538"/>
       <content type="html">&lt;p&gt;Deployed some fixes&lt;/p&gt;</content>
       <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
       <published>2016-10-10T13:10:37Z</published>
       <updated>2016-10-10T13:10:37Z</updated>
       <author>
         <activity:object-type>http://activitystrea.ms/schema/1.0/person</activity:object-type>
-        <uri>https://gab.com/users/robcolbert</uri>
+        <uri>https://kik.com/users/robcolbert</uri>
         <name>Rob Colbert</name>
-        <email>robcolbert@gab.com</email>
-        <summary>Developer of Gab Social, a GNU social alternative: https://code.gab.com/gab/social/kik-social</summary>
-        <link rel="alternate" type="text/html" href="https://gab.com/users/robcolbert"/>
+        <email>robcolbert@kik.com</email>
+        <summary>Developer of kik Social, a GNU social alternative: https://code.kik.com/kik/social/kik-social</summary>
+        <link rel="alternate" type="text/html" href="https://kik.com/users/robcolbert"/>
         <link rel="avatar" type="image/png" media:width="300" media:height="300" href="http://kickass.zone/system/accounts/avatars/000/000/003/large/4375_eugencommish.png"/>
         <link rel="avatar" type="image/png" media:width="96" media:height="96" href="http://kickass.zone/system/accounts/avatars/000/000/003/medium/4375_eugencommish.png"/>
         <link rel="avatar" type="image/png" media:width="48" media:height="48" href="http://kickass.zone/system/accounts/avatars/000/000/003/small/4375_eugencommish.png"/>
         <poco:preferredUsername>robcolbert</poco:preferredUsername>
         <poco:displayName>Eugen</poco:displayName>
-        <poco:note>Developer of Gab Social, a GNU social alternative: https://code.gab.com/gab/social/kik-social</poco:note>
+        <poco:note>Developer of kik Social, a GNU social alternative: https://code.kik.com/kik/social/kik-social</poco:note>
       </author>
     </activity:object>
   </entry>
@@ -156,19 +156,19 @@
     <id>tag:kickass.zone,2016-10-10:objectId=4:objectType=Follow</id>
     <published>2016-10-10T00:23:07Z</published>
     <updated>2016-10-10T00:23:07Z</updated>
-    <title>localhost started following bignimbus@gab.com</title>
-    <content type="html">localhost started following bignimbus@gab.com</content>
+    <title>localhost started following bignimbus@kik.com</title>
+    <content type="html">localhost started following bignimbus@kik.com</content>
     <activity:verb>http://activitystrea.ms/schema/1.0/follow</activity:verb>
     <link rel="self" type="application/atom+xml" href="http://kickass.zone/users/localhost/updates/6.atom"/>
     <link rel="alternate" type="text/html" href="http://kickass.zone/users/localhost/updates/6"/>
     <activity:object-type>http://activitystrea.ms/schema/1.0/activity</activity:object-type>
     <activity:object>
       <activity:object-type>http://activitystrea.ms/schema/1.0/person</activity:object-type>
-      <uri>https://gab.com/users/bignimbus</uri>
+      <uri>https://kik.com/users/bignimbus</uri>
       <name>bignimbus</name>
-      <email>bignimbus@gab.com</email>
+      <email>bignimbus@kik.com</email>
       <summary>jdauriemma.com</summary>
-      <link rel="alternate" type="text/html" href="https://gab.com/users/bignimbus"/>
+      <link rel="alternate" type="text/html" href="https://kik.com/users/bignimbus"/>
       <link rel="avatar" type="image/png" media:width="300" media:height="300" href="http://kickass.zone/system/accounts/avatars/000/000/004/large/jeff_avatar.png"/>
       <link rel="avatar" type="image/png" media:width="96" media:height="96" href="http://kickass.zone/system/accounts/avatars/000/000/004/medium/jeff_avatar.png"/>
       <link rel="avatar" type="image/png" media:width="48" media:height="48" href="http://kickass.zone/system/accounts/avatars/000/000/004/small/jeff_avatar.png"/>
@@ -181,43 +181,43 @@
     <id>tag:kickass.zone,2016-10-10:objectId=2:objectType=Follow</id>
     <published>2016-10-10T00:14:18Z</published>
     <updated>2016-10-10T00:14:18Z</updated>
-    <title>localhost started following robcolbert@gab.com</title>
-    <content type="html">localhost started following robcolbert@gab.com</content>
+    <title>localhost started following robcolbert@kik.com</title>
+    <content type="html">localhost started following robcolbert@kik.com</content>
     <activity:verb>http://activitystrea.ms/schema/1.0/follow</activity:verb>
     <link rel="self" type="application/atom+xml" href="http://kickass.zone/users/localhost/updates/5.atom"/>
     <link rel="alternate" type="text/html" href="http://kickass.zone/users/localhost/updates/5"/>
     <activity:object-type>http://activitystrea.ms/schema/1.0/activity</activity:object-type>
     <activity:object>
       <activity:object-type>http://activitystrea.ms/schema/1.0/person</activity:object-type>
-      <uri>https://gab.com/users/robcolbert</uri>
+      <uri>https://kik.com/users/robcolbert</uri>
       <name>Rob Colbert</name>
-      <email>robcolbert@gab.com</email>
-      <summary>Developer of Gab Social, a GNU social alternative: https://code.gab.com/gab/social/kik-social</summary>
-      <link rel="alternate" type="text/html" href="https://gab.com/users/robcolbert"/>
+      <email>robcolbert@kik.com</email>
+      <summary>Developer of kik Social, a GNU social alternative: https://code.kik.com/kik/social/kik-social</summary>
+      <link rel="alternate" type="text/html" href="https://kik.com/users/robcolbert"/>
       <link rel="avatar" type="image/png" media:width="300" media:height="300" href="http://kickass.zone/system/accounts/avatars/000/000/003/large/4375_eugencommish.png"/>
       <link rel="avatar" type="image/png" media:width="96" media:height="96" href="http://kickass.zone/system/accounts/avatars/000/000/003/medium/4375_eugencommish.png"/>
       <link rel="avatar" type="image/png" media:width="48" media:height="48" href="http://kickass.zone/system/accounts/avatars/000/000/003/small/4375_eugencommish.png"/>
       <poco:preferredUsername>robcolbert</poco:preferredUsername>
       <poco:displayName>Eugen</poco:displayName>
-      <poco:note>Developer of Gab Social, a GNU social alternative: https://code.gab.com/gab/social/kik-social</poco:note>
+      <poco:note>Developer of kik Social, a GNU social alternative: https://code.kik.com/kik/social/kik-social</poco:note>
     </activity:object>
   </entry>
   <entry>
     <id>tag:kickass.zone,2016-10-10:objectId=1:objectType=Follow</id>
     <published>2016-10-10T00:09:09Z</published>
     <updated>2016-10-10T00:09:09Z</updated>
-    <title>localhost started following abc@gab.com</title>
-    <content type="html">localhost started following abc@gab.com</content>
+    <title>localhost started following abc@kik.com</title>
+    <content type="html">localhost started following abc@kik.com</content>
     <activity:verb>http://activitystrea.ms/schema/1.0/follow</activity:verb>
     <link rel="self" type="application/atom+xml" href="http://kickass.zone/users/localhost/updates/4.atom"/>
     <link rel="alternate" type="text/html" href="http://kickass.zone/users/localhost/updates/4"/>
     <activity:object-type>http://activitystrea.ms/schema/1.0/activity</activity:object-type>
     <activity:object>
       <activity:object-type>http://activitystrea.ms/schema/1.0/person</activity:object-type>
-      <uri>https://gab.com/users/abc</uri>
+      <uri>https://kik.com/users/abc</uri>
       <name>abc</name>
-      <email>abc@gab.com</email>
-      <link rel="alternate" type="text/html" href="https://gab.com/users/abc"/>
+      <email>abc@kik.com</email>
+      <link rel="alternate" type="text/html" href="https://kik.com/users/abc"/>
       <link rel="avatar" type="image/jpeg" media:width="300" media:height="300" href="http://kickass.zone/system/accounts/avatars/000/000/002/large/cbm64_80x80.jpg"/>
       <link rel="avatar" type="image/jpeg" media:width="96" media:height="96" href="http://kickass.zone/system/accounts/avatars/000/000/002/medium/cbm64_80x80.jpg"/>
       <link rel="avatar" type="image/jpeg" media:width="48" media:height="48" href="http://kickass.zone/system/accounts/avatars/000/000/002/small/cbm64_80x80.jpg"/>

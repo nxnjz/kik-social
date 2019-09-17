@@ -91,8 +91,8 @@ describe InstancePresenter do
   end
 
   describe '#source_url' do
-    it 'returns "https://code.kik.com/kik/social/kik-social"' do
-      expect(instance_presenter.source_url).to eq('https://code.kik.com/kik/social/kik-social')
+    it 'returns "https://github.com/datgb/kik-social"' do
+      expect(instance_presenter.source_url).to eq('https://github.com/datgb/kik-social')
     end
   end
 

@@ -137,7 +137,7 @@ class Request
   end
 
   module ClientLimit
-    def body_with_limit(limit = 1.mekikyte)
+    def body_with_limit(limit = 1.megabyte)
       raise KikSocial::LengthValidationError if content_length.present? && content_length > limit
 
       if charset.nil?

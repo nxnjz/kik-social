@@ -13,7 +13,7 @@ class Api::BaseController < ApplicationController
 
   protect_from_forgery with: :null_session
 
-  rescue_from ActiveRecord::RecordInvalid, kikSocial::ValidationError do |e|
+  rescue_from ActiveRecord::RecordInvalid, KikSocial::ValidationError do |e|
     render json: { error: e.to_s }, status: 422
   end
 
@@ -21,7 +21,7 @@ class Api::BaseController < ApplicationController
     render json: { error: 'Record not found' }, status: 404
   end
 
-  rescue_from HTTP::Error, kikSocial::UnexpectedResponseError do
+  rescue_from HTTP::Error, KikSocial::UnexpectedResponseError do
     render json: { error: 'Remote data could not be fetched' }, status: 503
   end
 
@@ -29,7 +29,7 @@ class Api::BaseController < ApplicationController
     render json: { error: 'Remote SSL certificate could not be verified' }, status: 503
   end
 
-  rescue_from kikSocial::NotPermittedError do
+  rescue_from KikSocial::NotPermittedError do
     render json: { error: 'This action is not allowed' }, status: 403
   end
 

@@ -27,7 +27,7 @@ class RemoveStatusService < BaseService
 
         @status.destroy!
       else
-        raise kikSocial::RaceConditionError
+        raise KikSocial::RaceConditionError
       end
     end
 

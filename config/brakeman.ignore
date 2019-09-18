@@ -190,7 +190,7 @@
       "render_path": null,
       "location": {
         "type": "method",
-        "class": "kikSocial::Snowflake",
+        "class": "KikSocial::Snowflake",
         "method": "define_timestamp_id"
       },
       "user_input": "SecureRandom.hex(16)",

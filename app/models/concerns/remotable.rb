@@ -41,10 +41,10 @@ module Remotable
 
             self[attribute_name] = url if has_attribute?(attribute_name)
           end
-        rescue HTTP::TimeoutError, HTTP::ConnectionError, OpenSSL::SSL::SSLError, Paperclip::Errors::NotIdentifiedByImageMagickError, Addressable::URI::InvalidURIError, kikSocial::HostValidationError, kikSocial::LengthValidationError => e
+        rescue HTTP::TimeoutError, HTTP::ConnectionError, OpenSSL::SSL::SSLError, Paperclip::Errors::NotIdentifiedByImageMagickError, Addressable::URI::InvalidURIError, KikSocial::HostValidationError, KikSocial::LengthValidationError => e
           Rails.logger.debug "Error fetching remote #{attachment_name}: #{e}"
           nil
-        rescue Paperclip::Error, kikSocial::DimensionsValidationError => e
+        rescue Paperclip::Error, KikSocial::DimensionsValidationError => e
           Rails.logger.debug "Error processing remote #{attachment_name}: #{e}"
           nil
         end

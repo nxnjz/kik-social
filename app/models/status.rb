@@ -266,7 +266,7 @@ class Status < ApplicationRecord
   after_create_commit :update_statistics, if: :local?
   after_create_commit :increase_group_unread_counts, if: Proc.new { |status| !status.group_id.nil? }
 
-  around_create kikSocial::Snowflake::Callbacks
+  around_create KikSocial::Snowflake::Callbacks
 
   before_validation :prepare_contents, if: :local?
   before_validation :set_reblog

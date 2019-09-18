@@ -26,7 +26,7 @@ class ActivityPub::ProcessAccountService < BaseService
         process_tags
         process_attachments
       else
-        raise kikSocial::RaceConditionError
+        raise KikSocial::RaceConditionError
       end
     end
 

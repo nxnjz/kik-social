@@ -14,7 +14,7 @@ class RemoteUnfollowsController < ApplicationController
     else
       render :success
     end
-  rescue ActiveRecord::RecordNotFound, kikSocial::NotPermittedError
+  rescue ActiveRecord::RecordNotFound, KikSocial::NotPermittedError
     render :error
   end
 

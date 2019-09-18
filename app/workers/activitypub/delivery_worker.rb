@@ -37,7 +37,7 @@ class ActivityPub::DeliveryWorker
   def perform_request
     light = Stoplight(@inbox_url) do
       build_request.perform do |response|
-        raise kikSocial::UnexpectedResponseError, response unless response_successful?(response) || response_error_unsalvageable?(response)
+        raise KikSocial::UnexpectedResponseError, response unless response_successful?(response) || response_error_unsalvageable?(response)
       end
     end
 

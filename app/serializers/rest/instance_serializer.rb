@@ -28,7 +28,7 @@ class REST::InstanceSerializer < ActiveModel::Serializer
   end
 
   def version
-    kikSocial::Version.to_s
+    KikSocial::Version.to_s
   end
 
   def thumbnail

@@ -82,7 +82,7 @@ class Settings::Billing::UpgradeController < Settings::BaseController
 			when '5Y'
 				{code: 'PRO-5Y', desc: 'PRO - 5 Years', price: '200.00', months: 60}
 			else
-				raise kikSocial::ValidationError.new 'Plan not selected.'
+				raise KikSocial::ValidationError.new 'Plan not selected.'
 		end
 	end
 end

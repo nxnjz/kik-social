@@ -4,7 +4,7 @@ require_relative '../../config/boot'
 require_relative '../../config/environment'
 require_relative 'cli_helper'
 
-module kikSocial
+module KikSocial
   class StatusesCLI < Thor
     include ActionView::Helpers::NumberHelper
 
@@ -29,7 +29,7 @@ module kikSocial
       ActiveRecord::Base.connection.add_index(:status_pins, :status_id, name: :index_status_pins_status_id, algorithm: :concurrently) unless ActiveRecord::Base.connection.index_name_exists?(:status_pins, :index_status_pins_status_id)
       ActiveRecord::Base.connection.add_index(:media_attachments, :remote_url, name: :index_media_attachments_remote_url, where: 'remote_url is not null', algorithm: :concurrently) unless ActiveRecord::Base.connection.index_name_exists?(:media_attachments, :index_media_attachments_remote_url)
 
-      max_id   = kikSocial::Snowflake.id_at(options[:days].days.ago)
+      max_id   = KikSocial::Snowflake.id_at(options[:days].days.ago)
       start_at = Time.now.to_f
 
       say('Beginning removal... This might take a while...')

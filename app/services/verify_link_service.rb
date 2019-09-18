@@ -10,7 +10,7 @@ class VerifyLinkService < BaseService
     return unless link_back_present?
 
     field.mark_verified!
-  rescue OpenSSL::SSL::SSLError, HTTP::Error, Addressable::URI::InvalidURIError, kikSocial::HostValidationError, kikSocial::LengthValidationError => e
+  rescue OpenSSL::SSL::SSLError, HTTP::Error, Addressable::URI::InvalidURIError, KikSocial::HostValidationError, KikSocial::LengthValidationError => e
     Rails.logger.debug "Error fetching link #{@url}: #{e}"
     nil
   end

@@ -61,7 +61,7 @@ class ResolveAccountService < BaseService
           handle_ostatus
         end
       else
-        raise kikSocial::RaceConditionError
+        raise KikSocial::RaceConditionError
       end
     end
 
@@ -193,7 +193,7 @@ class ResolveAccountService < BaseService
     return @atom_body if defined?(@atom_body)
 
     @atom_body = Request.new(:get, atom_url).perform do |response|
-      raise kikSocial::UnexpectedResponseError, response unless response.code == 200
+      raise KikSocial::UnexpectedResponseError, response unless response.code == 200
       response.body_with_limit
     end
   end

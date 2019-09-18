@@ -12,7 +12,7 @@ class UpdateAccountService < BaseService
       check_links(account)
       process_hashtags(account)
     end
-  rescue kikSocial::DimensionsValidationError => de
+  rescue KikSocial::DimensionsValidationError => de
     account.errors.add(:avatar, de.message)
     false
   end

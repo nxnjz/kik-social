@@ -20,7 +20,7 @@ Bundler.require(:pam_authentication) if ENV['PAM_ENABLED'] == 'true'
 
 require_relative '../lib/kiksocial/redis_config'
 
-module kikSocial
+module KikSocial
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2

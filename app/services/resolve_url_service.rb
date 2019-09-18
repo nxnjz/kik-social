@@ -88,7 +88,7 @@ class ResolveURLService < BaseService
     return if status.nil?
     authorize_with @on_behalf_of, status, :show?
     status
-  rescue kikSocial::NotPermittedError
+  rescue KikSocial::NotPermittedError
     # Do not disclose the existence of status the user is not authorized to see
     nil
   end

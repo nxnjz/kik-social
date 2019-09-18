@@ -16,9 +16,9 @@ end
 module Goldfinger
   def self.finger(uri, opts = {})
     to_hidden = /\.(onion|i2p)(:\d+)?$/.match(uri)
-    raise kikSocial::HostValidationError, 'Instance does not support hidden service connections' if !Rails.configuration.x.access_to_hidden_service && to_hidden
+    raise KikSocial::HostValidationError, 'Instance does not support hidden service connections' if !Rails.configuration.x.access_to_hidden_service && to_hidden
     opts = { ssl: !to_hidden, headers: {} }.merge(Rails.configuration.x.http_client_proxy).merge(opts)
-    opts[:headers]['User-Agent'] ||= kikSocial::Version.user_agent
+    opts[:headers]['User-Agent'] ||= KikSocial::Version.user_agent
     Goldfinger::Client.new(uri, opts).finger
   end
 end

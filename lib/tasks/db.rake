@@ -63,13 +63,13 @@ namespace :db do
 
   task :define_timestamp_id do
     each_schema_load_environment do
-      kikSocial::Snowflake.define_timestamp_id
+      KikSocial::Snowflake.define_timestamp_id
     end
   end
 
   task :ensure_id_sequences_exist do
     each_schema_load_environment do
-      kikSocial::Snowflake.ensure_id_sequences_exist
+      KikSocial::Snowflake.ensure_id_sequences_exist
     end
   end
 end

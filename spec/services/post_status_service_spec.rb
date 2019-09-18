@@ -207,7 +207,7 @@ RSpec.describe PostStatusService, type: :service do
         ].map(&:id),
       )
     end.to raise_error(
-      kikSocial::ValidationError,
+      KikSocial::ValidationError,
       I18n.t('media_attachments.validations.too_many'),
     )
   end
@@ -225,7 +225,7 @@ RSpec.describe PostStatusService, type: :service do
         ].map(&:id),
       )
     end.to raise_error(
-      kikSocial::ValidationError,
+      KikSocial::ValidationError,
       I18n.t('media_attachments.validations.images_and_video'),
     )
   end

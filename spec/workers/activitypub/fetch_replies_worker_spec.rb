@@ -34,7 +34,7 @@ describe ActivityPub::FetchRepliesWorker do
 
     it 'raises when request fails' do
       stub_request(:get, 'https://example.com/statuses_replies/1').to_return(status: 500)
-      expect { subject.perform(status.id, 'https://example.com/statuses_replies/1') }.to raise_error kikSocial::UnexpectedResponseError
+      expect { subject.perform(status.id, 'https://example.com/statuses_replies/1') }.to raise_error KikSocial::UnexpectedResponseError
     end
   end
 end

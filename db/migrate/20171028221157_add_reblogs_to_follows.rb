@@ -1,7 +1,7 @@
 require Rails.root.join('lib', 'kiksocial', 'migration_helpers')
 
 class AddReblogsToFollows < ActiveRecord::Migration[5.1]
-  include kikSocial::MigrationHelpers
+  include KikSocial::MigrationHelpers
 
   disable_ddl_transaction!
 

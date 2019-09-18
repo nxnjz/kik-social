@@ -16,7 +16,7 @@ class RefollowWorker
       # Schedule re-follow
       begin
         FollowService.new.call(follower, target_account)
-      rescue kikSocial::NotPermittedError, ActiveRecord::RecordNotFound, kikSocial::UnexpectedResponseError, HTTP::Error, OpenSSL::SSL::SSLError
+      rescue KikSocial::NotPermittedError, ActiveRecord::RecordNotFound, KikSocial::UnexpectedResponseError, HTTP::Error, OpenSSL::SSL::SSLError
         next
       end
     end

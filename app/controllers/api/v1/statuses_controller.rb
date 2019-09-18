@@ -90,7 +90,7 @@ class Api::V1::StatusesController < Api::BaseController
   def set_status
     @status = Status.find(params[:id])
     authorize @status, :show?
-  rescue kikSocial::NotPermittedError
+  rescue KikSocial::NotPermittedError
     raise ActiveRecord::RecordNotFound
   end
 

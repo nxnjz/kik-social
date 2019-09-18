@@ -12,7 +12,7 @@ class UnfollowFollowWorker
 
     FollowService.new.call(follower_account, new_target_account)
     UnfollowService.new.call(follower_account, old_target_account)
-  rescue ActiveRecord::RecordNotFound, kikSocial::NotPermittedError
+  rescue ActiveRecord::RecordNotFound, KikSocial::NotPermittedError
     true
   end
 end

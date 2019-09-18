@@ -63,11 +63,11 @@ class EditStatusService < BaseService
   def validate_media!
     return if @options[:media_ids].blank? || !@options[:media_ids].is_a?(Enumerable)
 
-    raise kikSocial::ValidationError, I18n.t('media_attachments.validations.too_many') if @options[:media_ids].size > 4
+    raise KikSocial::ValidationError, I18n.t('media_attachments.validations.too_many') if @options[:media_ids].size > 4
 
     @media = @account.media_attachments.where(id: @options[:media_ids].take(4).map(&:to_i))
 
-    raise kikSocial::ValidationError, I18n.t('media_attachments.validations.images_and_video') if @media.size > 1 && @media.find(&:video?)
+    raise KikSocial::ValidationError, I18n.t('media_attachments.validations.images_and_video') if @media.size > 1 && @media.find(&:video?)
   end
 
   def language_from_option(str)

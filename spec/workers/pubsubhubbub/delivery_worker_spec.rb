@@ -26,7 +26,7 @@ describe Pubsubhubbub::DeliveryWorker do
       subscription = Fabricate(:subscription)
 
       stub_request_to_respond_with(subscription, 500)
-      expect { subject.perform(subscription.id, payload) }.to raise_error kikSocial::UnexpectedResponseError
+      expect { subject.perform(subscription.id, payload) }.to raise_error KikSocial::UnexpectedResponseError
     end
 
     it 'updates subscriptions when delivery succeeds' do

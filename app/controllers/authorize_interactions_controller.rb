@@ -25,7 +25,7 @@ class AuthorizeInteractionsController < ApplicationController
     else
       render :error
     end
-  rescue ActiveRecord::RecordNotFound, kikSocial::NotPermittedError
+  rescue ActiveRecord::RecordNotFound, KikSocial::NotPermittedError
     render :error
   end
 

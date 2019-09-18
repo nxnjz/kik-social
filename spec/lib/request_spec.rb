@@ -82,14 +82,14 @@ describe Request do
         WebMock.enable!
       end
 
-      it 'raises kikSocial::ValidationError' do
+      it 'raises KikSocial::ValidationError' do
         resolver = double
 
         allow(resolver).to receive(:getaddresses).with('example.com').and_return(%w(0.0.0.0 2001:db8::face))
         allow(resolver).to receive(:timeouts=).and_return(nil)
         allow(Resolv::DNS).to receive(:open).and_yield(resolver)
 
-        expect { subject.perform }.to raise_error kikSocial::ValidationError
+        expect { subject.perform }.to raise_error KikSocial::ValidationError
       end
     end
   end
@@ -97,7 +97,7 @@ describe Request do
   describe "response's body_with_limit method" do
     it 'rejects body more than 1 mekikyte by default' do
       stub_request(:any, 'http://example.com').to_return(body: SecureRandom.random_bytes(2.mekikytes))
-      expect { subject.perform { |response| response.body_with_limit } }.to raise_error kikSocial::LengthValidationError
+      expect { subject.perform { |response| response.body_with_limit } }.to raise_error KikSocial::LengthValidationError
     end
 
     it 'accepts body less than 1 mekikyte by default' do
@@ -107,17 +107,17 @@ describe Request do
 
     it 'rejects body by given size' do
       stub_request(:any, 'http://example.com').to_return(body: SecureRandom.random_bytes(2.kilobytes))
-      expect { subject.perform { |response| response.body_with_limit(1.kilobyte) } }.to raise_error kikSocial::LengthValidationError
+      expect { subject.perform { |response| response.body_with_limit(1.kilobyte) } }.to raise_error KikSocial::LengthValidationError
     end
 
     it 'rejects too large chunked body' do
       stub_request(:any, 'http://example.com').to_return(body: SecureRandom.random_bytes(2.mekikytes), headers: { 'Transfer-Encoding' => 'chunked' })
-      expect { subject.perform { |response| response.body_with_limit } }.to raise_error kikSocial::LengthValidationError
+      expect { subject.perform { |response| response.body_with_limit } }.to raise_error KikSocial::LengthValidationError
     end
 
     it 'rejects too large monolithic body' do
       stub_request(:any, 'http://example.com').to_return(body: SecureRandom.random_bytes(2.mekikytes), headers: { 'Content-Length' => 2.mekikytes })
-      expect { subject.perform { |response| response.body_with_limit } }.to raise_error kikSocial::LengthValidationError
+      expect { subject.perform { |response| response.body_with_limit } }.to raise_error KikSocial::LengthValidationError
     end
 
     it 'uses binary encoding if Content-Type does not tell encoding' do

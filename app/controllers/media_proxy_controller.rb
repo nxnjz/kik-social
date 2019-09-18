@@ -9,7 +9,7 @@ class MediaProxyController < ApplicationController
         @media_attachment = MediaAttachment.remote.find(params[:id])
         redownload! if @media_attachment.needs_redownload? && !reject_media?
       else
-        raise kikSocial::RaceConditionError
+        raise KikSocial::RaceConditionError
       end
     end
 

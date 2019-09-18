@@ -85,8 +85,8 @@ describe InstancePresenter do
   end
 
   describe '#version_number' do
-    it 'returns kikSocial::Version' do
-      expect(instance_presenter.version_number).to be(kikSocial::Version)
+    it 'returns KikSocial::Version' do
+      expect(instance_presenter.version_number).to be(KikSocial::Version)
     end
   end
 

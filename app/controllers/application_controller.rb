@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   rescue_from ActionController::InvalidAuthenticityToken, with: :unprocessable_entity
   rescue_from ActionController::UnknownFormat, with: :not_acceptable
-  rescue_from kikSocial::NotPermittedError, with: :forbidden
+  rescue_from KikSocial::NotPermittedError, with: :forbidden
 
   before_action :store_current_location, except: :raise_not_found, unless: :devise_controller?
   before_action :check_user_permissions, if: :user_signed_in?

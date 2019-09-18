@@ -75,7 +75,7 @@ module JsonLdHelper
   def fetch_resource_without_id_validation(uri, on_behalf_of = nil, raise_on_temporary_error = false)
     build_request(uri, on_behalf_of).perform do |response|
       unless response_successful?(response) || response_error_unsalvageable?(response) || !raise_on_temporary_error
-        raise kikSocial::UnexpectedResponseError, response
+        raise KikSocial::UnexpectedResponseError, response
       end
       return body_to_json(response.body_with_limit) if response.code == 200
     end
@@ -83,7 +83,7 @@ module JsonLdHelper
     return if on_behalf_of.nil?
     build_request(uri).perform do |response|
       unless response_successful?(response) || response_error_unsalvageable?(response) || !raise_on_temporary_error
-        raise kikSocial::UnexpectedResponseError, response
+        raise KikSocial::UnexpectedResponseError, response
       end
       response.code == 200 ? body_to_json(response.body_with_limit) : nil
     end

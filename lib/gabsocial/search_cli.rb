@@ -4,7 +4,7 @@ require_relative '../../config/boot'
 require_relative '../../config/environment'
 require_relative 'cli_helper'
 
-module kikSocial
+module KikSocial
   class SearchCLI < Thor
     desc 'deploy', 'Create or update an ElasticSearch index and populate it'
     long_desc <<~LONG_DESC

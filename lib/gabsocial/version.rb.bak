@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module kikSocial
+module KikSocial
   module Version
     module_function
 
@@ -54,7 +54,7 @@ module kikSocial
     end
 
     def user_agent
-      @user_agent ||= "#{HTTP::Request::USER_AGENT} (kikSocial/#{Version}; +http#{Rails.configuration.x.use_https ? 's' : ''}://#{Rails.configuration.x.web_domain}/)"
+      @user_agent ||= "#{HTTP::Request::USER_AGENT} (KikSocial/#{Version}; +http#{Rails.configuration.x.use_https ? 's' : ''}://#{Rails.configuration.x.web_domain}/)"
     end
   end
 end

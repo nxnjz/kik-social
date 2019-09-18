@@ -20,7 +20,7 @@ class ProcessMentionsService < BaseService
       if mention_undeliverable?(mentioned_account)
         begin
           mentioned_account = resolve_account_service.call(Regexp.last_match(1))
-        rescue Goldfinger::Error, HTTP::Error, OpenSSL::SSL::SSLError, kikSocial::UnexpectedResponseError
+        rescue Goldfinger::Error, HTTP::Error, OpenSSL::SSL::SSLError, KikSocial::UnexpectedResponseError
           mentioned_account = nil
         end
       end

@@ -24,7 +24,7 @@ class Pubsubhubbub::DeliveryWorker
 
   def process_delivery
     callback_post_payload do |payload_delivery|
-      raise kikSocial::UnexpectedResponseError, payload_delivery unless response_successful? payload_delivery
+      raise KikSocial::UnexpectedResponseError, payload_delivery unless response_successful? payload_delivery
     end
 
     subscription.touch(:last_successful_delivery_at)

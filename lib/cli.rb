@@ -12,38 +12,38 @@ require_relative 'kiksocial/domains_cli'
 require_relative 'kiksocial/cache_cli'
 require_relative 'kiksocial/version'
 
-module kikSocial
+module KikSocial
   class CLI < Thor
     def self.exit_on_failure?
       true
     end
 
     desc 'media SUBCOMMAND ...ARGS', 'Manage media files'
-    subcommand 'media', kikSocial::MediaCLI
+    subcommand 'media', KikSocial::MediaCLI
 
     desc 'emoji SUBCOMMAND ...ARGS', 'Manage custom emoji'
-    subcommand 'emoji', kikSocial::EmojiCLI
+    subcommand 'emoji', KikSocial::EmojiCLI
 
     desc 'accounts SUBCOMMAND ...ARGS', 'Manage accounts'
-    subcommand 'accounts', kikSocial::AccountsCLI
+    subcommand 'accounts', KikSocial::AccountsCLI
 
     desc 'feeds SUBCOMMAND ...ARGS', 'Manage feeds'
-    subcommand 'feeds', kikSocial::FeedsCLI
+    subcommand 'feeds', KikSocial::FeedsCLI
 
     desc 'search SUBCOMMAND ...ARGS', 'Manage the search engine'
-    subcommand 'search', kikSocial::SearchCLI
+    subcommand 'search', KikSocial::SearchCLI
 
     desc 'settings SUBCOMMAND ...ARGS', 'Manage dynamic settings'
-    subcommand 'settings', kikSocial::SettingsCLI
+    subcommand 'settings', KikSocial::SettingsCLI
 
     desc 'statuses SUBCOMMAND ...ARGS', 'Manage statuses'
-    subcommand 'statuses', kikSocial::StatusesCLI
+    subcommand 'statuses', KikSocial::StatusesCLI
 
     desc 'domains SUBCOMMAND ...ARGS', 'Manage account domains'
-    subcommand 'domains', kikSocial::DomainsCLI
+    subcommand 'domains', KikSocial::DomainsCLI
 
     desc 'cache SUBCOMMAND ...ARGS', 'Manage cache'
-    subcommand 'cache', kikSocial::CacheCLI
+    subcommand 'cache', KikSocial::CacheCLI
 
     option :dry_run, type: :boolean
     desc 'self-destruct', 'Erase the server from the federation'
@@ -122,7 +122,7 @@ module kikSocial
 
     desc 'version', 'Show version'
     def version
-      say(kikSocial::Version.to_s)
+      say(KikSocial::Version.to_s)
     end
   end
 end

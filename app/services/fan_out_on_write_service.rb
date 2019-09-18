@@ -4,7 +4,7 @@ class FanOutOnWriteService < BaseService
   # Push a status into home and mentions feeds
   # @param [Status] status
   def call(status)
-    raise kikSocial::RaceConditionError if status.visibility.nil?
+    raise KikSocial::RaceConditionError if status.visibility.nil?
 
     render_anonymous_payload(status)
 

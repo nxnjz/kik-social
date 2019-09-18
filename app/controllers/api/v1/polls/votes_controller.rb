@@ -19,7 +19,7 @@ class Api::V1::Polls::VotesController < Api::BaseController
   def set_poll
     @poll = Poll.attached.find(params[:poll_id])
     authorize @poll.status, :show?
-  rescue kikSocial::NotPermittedError
+  rescue KikSocial::NotPermittedError
     raise ActiveRecord::RecordNotFound
   end
 

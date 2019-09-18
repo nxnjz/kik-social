@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module kikSocial::Snowflake
+module KikSocial::Snowflake
   DEFAULT_REGEX = /timestamp_id\('(?<seq_prefix>\w+)'/
 
   class Callbacks
@@ -10,7 +10,7 @@ module kikSocial::Snowflake
       if record.created_at.nil? || record.created_at >= now || record.created_at == record.updated_at || record.override_timestamps
         yield
       else
-        record.id = kikSocial::Snowflake.id_at(record.created_at)
+        record.id = KikSocial::Snowflake.id_at(record.created_at)
         tries     = 0
 
         begin

@@ -29,13 +29,13 @@ class Api::V1::Statuses::MutesController < Api::BaseController
   def set_status
     @status = Status.find(params[:status_id])
     authorize @status, :show?
-  rescue kikSocial::NotPermittedError
+  rescue KikSocial::NotPermittedError
     # Reraise in order to get a 404 instead of a 403 error code
     raise ActiveRecord::RecordNotFound
   end
 
   def set_conversation
     @conversation = @status.conversation
-    raise kikSocial::ValidationError if @conversation.nil?
+    raise KikSocial::ValidationError if @conversation.nil?
   end
 end

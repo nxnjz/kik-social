@@ -17,7 +17,7 @@ class FollowerAccountsController < ApplicationController
       end
 
       format.json do
-        raise kikSocial::NotPermittedError if params[:page].present? && @account.user_hides_network?
+        raise KikSocial::NotPermittedError if params[:page].present? && @account.user_hides_network?
 
         if params[:page].blank?
           skip_session!

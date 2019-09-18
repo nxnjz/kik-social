@@ -27,7 +27,7 @@ class Request
     @options = options.merge(use_proxy? ? Rails.configuration.x.http_client_proxy : { socket_class: Socket })
     @headers = {}
 
-    raise kikSocial::HostValidationError, 'Instance does not support hidden service connections' if block_hidden_service?
+    raise KikSocial::HostValidationError, 'Instance does not support hidden service connections' if block_hidden_service?
 
     set_common_headers!
     set_digest! if options.key?(:body)
@@ -82,7 +82,7 @@ class Request
 
   def set_common_headers!
     @headers[REQUEST_TARGET]    = "#{@verb} #{@url.path}"
-    @headers['User-Agent']      = kikSocial::Version.user_agent
+    @headers['User-Agent']      = KikSocial::Version.user_agent
     @headers['Host']            = @url.host
     @headers['Date']            = Time.now.utc.httpdate
     @headers['Accept-Encoding'] = 'gzip' if @verb != :head
@@ -138,7 +138,7 @@ class Request
 
   module ClientLimit
     def body_with_limit(limit = 1.mekikyte)
-      raise kikSocial::LengthValidationError if content_length.present? && content_length > limit
+      raise KikSocial::LengthValidationError if content_length.present? && content_length > limit
 
       if charset.nil?
         encoding = Encoding::BINARY
@@ -156,7 +156,7 @@ class Request
         contents << chunk
         chunk.clear
 
-        raise kikSocial::LengthValidationError if contents.bytesize > limit
+        raise KikSocial::LengthValidationError if contents.bytesize > limit
       end
 
       contents
@@ -178,7 +178,7 @@ class Request
 
           addresses.each do |address|
             begin
-              raise kikSocial::HostValidationError if PrivateAddressCheck.private_address?(IPAddr.new(address.to_s))
+              raise KikSocial::HostValidationError if PrivateAddressCheck.private_address?(IPAddr.new(address.to_s))
 
               ::Timeout.timeout(time_slot, HTTP::TimeoutError) do
                 return super(address.to_s, *args)

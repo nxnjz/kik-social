@@ -18,7 +18,7 @@ class SubscribeService < BaseService
       else
         # The response was either a 429 rate limit, or a 5xx error.
         # We need to retry at a later time. Fail loudly!
-        raise kikSocial::UnexpectedResponseError, response
+        raise KikSocial::UnexpectedResponseError, response
       end
     end
   end

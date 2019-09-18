@@ -5,7 +5,7 @@ require_relative '../../config/boot'
 require_relative '../../config/environment'
 require_relative 'cli_helper'
 
-module kikSocial
+module KikSocial
   class DomainsCLI < Thor
     def self.exit_on_failure?
       true

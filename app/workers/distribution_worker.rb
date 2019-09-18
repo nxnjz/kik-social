@@ -8,7 +8,7 @@ class DistributionWorker
       if lock.acquired?
         FanOutOnWriteService.new.call(Status.find(status_id))
       else
-        raise kikSocial::RaceConditionError
+        raise KikSocial::RaceConditionError
       end
     end
   rescue ActiveRecord::RecordNotFound

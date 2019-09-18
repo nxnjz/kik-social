@@ -37,11 +37,11 @@ class InstancePresenter
   end
 
   def version_number
-    kikSocial::Version
+    KikSocial::Version
   end
 
   def source_url
-    kikSocial::Version.source_url
+    KikSocial::Version.source_url
   end
 
   def thumbnail

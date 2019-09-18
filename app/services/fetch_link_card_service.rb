@@ -32,12 +32,12 @@ class FetchLinkCardService < BaseService
         @card = PreviewCard.find_by(url: @url)
         process_url if @card.nil? || @card.updated_at <= 2.weeks.ago
       else
-        raise kikSocial::RaceConditionError
+        raise KikSocial::RaceConditionError
       end
     end
 
     attach_card if @card&.persisted?
-  rescue HTTP::Error, Addressable::URI::InvalidURIError, kikSocial::HostValidationError, kikSocial::LengthValidationError => e
+  rescue HTTP::Error, Addressable::URI::InvalidURIError, KikSocial::HostValidationError, KikSocial::LengthValidationError => e
     Rails.logger.debug "Error fetching link #{@url}: #{e}"
     nil
   end

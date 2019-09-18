@@ -33,11 +33,11 @@ RSpec.describe SubscribeService, type: :service do
 
   it 'fails loudly if PuSH hub is unavailable' do
     stub_request(:post, 'http://hub.example.com/').to_return(status: 503)
-    expect { subject.call(account) }.to raise_error kikSocial::UnexpectedResponseError
+    expect { subject.call(account) }.to raise_error KikSocial::UnexpectedResponseError
   end
 
   it 'fails loudly if rate limited' do
     stub_request(:post, 'http://hub.example.com/').to_return(status: 429)
-    expect { subject.call(account) }.to raise_error kikSocial::UnexpectedResponseError
+    expect { subject.call(account) }.to raise_error KikSocial::UnexpectedResponseError
   end
 end

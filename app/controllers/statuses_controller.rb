@@ -188,7 +188,7 @@ class StatusesController < ApplicationController
     @type         = @stream_entry.activity_type.downcase
 
     authorize @status, :show?
-  rescue kikSocial::NotPermittedError
+  rescue KikSocial::NotPermittedError
     # Reraise in order to get a 404
     raise ActiveRecord::RecordNotFound
   end

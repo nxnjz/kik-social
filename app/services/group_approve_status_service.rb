@@ -6,7 +6,7 @@ class GroupApproveStatusService < BaseService
     @group = group
     @status = status
 
-    raise kikSocial::Error, "Record not found." if @group.id != @status.group_id
+    raise KikSocial::Error, "Record not found." if @group.id != @status.group_id
 
     # Update status
     # @status.awaiting_moderation = false

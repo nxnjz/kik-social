@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# Update code and update public/src/kik-social.zip
-git pull origin develop
-./gs-export
-
-# Do the thing with the thing
-bin/rails db:migrate
-bin/rails assets:precompile

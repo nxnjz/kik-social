@@ -13,7 +13,7 @@
 #
 
 class AccountVerificationRequest < ApplicationRecord
-	LIMIT            = 4.mekikytes
+	LIMIT            = 4.megabytes
 	IMAGE_MIME_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'].freeze
 
 	belongs_to :account
